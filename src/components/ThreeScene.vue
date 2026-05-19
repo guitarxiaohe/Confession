@@ -1563,7 +1563,7 @@ function handleReject() {
   witherStartTime = performance.now() * 0.001;
   window.setTimeout(() => {
     showProposal.value = false;
-  }, 2400);
+  }, 4600);
 }
 
 function triggerRose() {
@@ -1874,7 +1874,7 @@ function animate(time: number) {
         showProposal.value = true;
       }
       const witherProgress = proposalRejecting.value
-        ? Math.min(Math.max((t - witherStartTime) / 2.8, 0), 1)
+        ? Math.min(Math.max((t - witherStartTime) / 4.8, 0), 1)
         : 0;
 
       const settle = Math.min(Math.max((roseTime - 3.4) / 1.2, 0), 1);
@@ -2294,7 +2294,7 @@ onBeforeUnmount(() => {
 }
 
 .proposal-stage--reject .proposal-flowers__item {
-  animation: flower-drop 1.9s cubic-bezier(0.2, 0.88, 0.28, 1) forwards;
+  animation: flower-drop 3.8s cubic-bezier(0.18, 0.78, 0.22, 1) forwards;
   animation-delay: var(--drop-delay);
 }
 
@@ -2349,7 +2349,7 @@ onBeforeUnmount(() => {
 }
 
 .proposal-stage--reject .proposal-copy {
-  animation: proposal-fall 1.9s cubic-bezier(0.2, 0.88, 0.28, 1) forwards 0.35s;
+  animation: proposal-fall 3.6s cubic-bezier(0.18, 0.78, 0.22, 1) forwards 0.85s;
 }
 
 .proposal-copy__halo {
@@ -2490,9 +2490,13 @@ onBeforeUnmount(() => {
     opacity: 0.96;
     transform: translate(-50%, -50%) scale(1) rotate(0deg);
   }
+  18% {
+    opacity: 0.96;
+    transform: translate(-50%, -50%) scale(0.995) rotate(1deg);
+  }
   100% {
     opacity: 0;
-    transform: translate(-50%, calc(-50% + 110vh)) scale(0.88) rotate(18deg);
+    transform: translate(-50%, calc(-50% + 110vh)) scale(0.82) rotate(18deg);
   }
 }
 
@@ -2529,9 +2533,13 @@ onBeforeUnmount(() => {
     opacity: 1;
     transform: translateY(0) scale(1);
   }
+  24% {
+    opacity: 1;
+    transform: translateY(6px) scale(0.995);
+  }
   100% {
     opacity: 0;
-    transform: translateY(105vh) scale(0.92);
+    transform: translateY(105vh) scale(0.88);
   }
 }
 
